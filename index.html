@@ -8,5 +8,26 @@
 <body>
     <h1>Interação com APIs</h1>
     <h2>Requisição e Resposta</h2>
+    <div>
+        <p>
+            <span>DENCENDENTE</span>
+        </p>
+        <span>FILHO</span>
+    </div>
+    <span>FORA</span>
+
+    <div id="caixa"></div>
+
+    <script>
+        document.querySelector('div + span').innerHTML = 'IRMÃO';
+        document.querySelector('div + span').setAttribute('id', 'irmao');
+        document.querySelector('div + span').classList.add('span');
+
+        const p = document.createElement('p');
+        p.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto cumque cupiditate iste tempora, ipsam corrupti aliquam officia doloremque possimus iure.';
+
+        document.querySelector('#caixa').appendChild(p);
+
+    </script>
 </body>
 </html>
