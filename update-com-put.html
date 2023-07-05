@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização de produtos</title>
+</head>
+
+<body>
+    <div id="resposta"></div>
+    
+    <form action="" method="post">
+        ID: <input type="text" id="id"><br>
+        Descrição: <input type="text" id="descricao"><br>
+        Preço: <input type="text" id="preco"><br>
+        Imagem: <input type="text" id="imagem"><br>
+
+        <button type="button" id="btnAtualizar">Atualizar</button>
+    </form>
+
+    <div id="listaProdutos"></div>
+
+    <script>
+        document.querySelector('#btnAtualizar').addEventListener('click', () => {
+
+            const id = document.querySelector('#id').value;
+
+            const dados = {
+                'id': null,
+                'descricao': document.querySelector('#descricao').value,
+                'preco': document.querySelector('#preco').value,
+                'imagem': document.querySelector('#imagem').value
+            };
+
+            fetch(`http://localhost:3000/produtos/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(dados)
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        document.querySelector('#resposta').innerHTML = 'Produto atualizado!';
+                    }
+                })
+
+            getProdutos();
+
+        });
+
+        function getProdutos() {
+
+            fetch('http://localhost:3000/produtos/', {
+                method: 'GET',
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            })
+                .then(resposta => resposta.json())
+                .then(resposta => {
+
+                    document.querySelector('#listaProdutos').innerHTML = "";
+
+                    for (let i = 0; i < resposta.length; i++) {
+
+                        const ul = document.createElement("ul");
+
+                        const produto = `
+                            <li>ID: ${resposta[i].id}</li>
+                            <li>Descrição: ${resposta[i].descricao}</li>
+                            <li>Preço: ${resposta[i].preco}</li>
+                            <li><img src=${resposta[i].imagem}></li>
+                        `
+                        document.querySelector('#listaProdutos').appendChild(ul).innerHTML = produto;
+                    }
+
+                });
+        }
+
+        getProdutos();
+    </script>
+</body>
+
+</html>
