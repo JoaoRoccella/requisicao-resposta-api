@@ -2,8 +2,36 @@
     "produtos": [
         {
             "id": 1,
-            "descricao": "Sapato masculino New York",
+            "descricao": "Sapato social Manhattan",
             "preco": 199.90
+        },
+        {
+            "id": 2,
+            "descricao": "Sapato casual Brooklyn",
+            "preco": 159.90
+        },
+        {
+            "id": 3,
+            "descricao": "Sandália social Queens",
+            "preco": 112.90
+        },
+        {
+            "id": 4,
+            "descricao": "Sandália casual Bronx",
+            "preco": 122.90
+        },
+        {
+            "id": 5,
+            "descricao": "Alpargatas Staten Island",
+            "preco": 99.90
+        }
+    ],
+    "usuarios": [
+        {
+            "id": 1,
+            "usuario": "admin",
+            "senha": "admin",
+            "email": "admin@admin.com"
         }
     ]
 }
