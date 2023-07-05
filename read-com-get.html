@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação com APIs | Read com GET</title>
+</head>
+
+<body>
+    <header>
+        <a href="./">Home</a>
+        <h1>Read com GET</h1>
+    </header>
+    
+    <div id="resposta"></div>
+
+    <script>
+        
+        const requisicao = new Request('http://localhost:3000/produtos');
+
+        fetch(requisicao)
+            .then(resposta => resposta.json())
+            .then(resposta => {
+                
+                console.log(resposta)
+                
+                for (let i = 0; i < 3; i++) {
+
+                    let linha = `<li>${resposta[i].id}</li>`;
+                    linha += `<li>${resposta[i].descricao}</li>`;
+                    linha += `<li>${resposta[i].preco}</li>`;
+
+                    const ul = document.createElement("ul");
+
+                    document.querySelector('#resposta').appendChild(ul).innerHTML = linha;
+                }
+            });
+
+    </script>
+</body>
+
+</html>
