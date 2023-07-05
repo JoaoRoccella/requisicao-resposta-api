@@ -8,5 +8,20 @@
 <body>
     <h1>Interação com APIs</h1>
     <h2>Requisição e Resposta</h2>
+
+    <div class="minhaClasseDiv">
+        <p>
+            <span></span>
+        </p>
+    </div>
+    <button type="button" id="botao">Botão</button>
+
+    <script>
+
+        document.querySelector('[type=button]').addEventListener('click', () => {
+            document.querySelector('.minhaClasseDiv > p').innerHTML = 'Texto interior';
+        });
+
+    </script>
 </body>
 </html>
