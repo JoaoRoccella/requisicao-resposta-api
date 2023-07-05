@@ -11,10 +11,17 @@
     <div id="resposta"></div>
     
     <form action="" method="post">
-        ID: <input type="text" id="id"><br>
-        Descrição: <input type="text" id="descricao"><br>
-        Preço: <input type="text" id="preco"><br>
-        Imagem: <input type="text" id="imagem"><br>
+        <label for="id">ID:</label>
+        <input type="text" id="id"><br>
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao"><br>
+
+        <label for="preco">Preço:</label>
+        <input type="text" id="preco"><br>
+
+        <label for="imagem">Imagem:</label>
+        <input type="text" id="imagem"><br>
 
         <button type="button" id="btnAtualizar">Atualizar</button>
     </form>
@@ -41,7 +48,7 @@
                 body: JSON.stringify(dados)
             })
                 .then(response => {
-                    if (response.status === 200) {
+                    if (response.ok) {
                         document.querySelector('#resposta').innerHTML = 'Produto atualizado!';
                     }
                 })
@@ -65,15 +72,22 @@
 
                     for (let i = 0; i < resposta.length; i++) {
 
-                        const ul = document.createElement("ul");
+                        const ul = document.createElement('ul');
+                        const img = document.createElement('img');
 
-                        const produto = `
-                            <li>ID: ${resposta[i].id}</li>
-                            <li>Descrição: ${resposta[i].descricao}</li>
-                            <li>Preço: ${resposta[i].preco}</li>
-                            <li><img src=${resposta[i].imagem}></li>
-                        `
-                        document.querySelector('#listaProdutos').appendChild(ul).innerHTML = produto;
+                        ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
+                        ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
+                        
+                        ul
+                            .appendChild(document.createElement('li'))
+                            .innerHTML = resposta[i].preco;
+                        
+                        ul
+                            .appendChild(document.createElement('li'))
+                            .appendChild(img)
+                            .setAttribute('src', resposta[i].imagem);  
+                        
+                        document.querySelector('#listaProdutos').appendChild(ul);
                     }
 
                 });

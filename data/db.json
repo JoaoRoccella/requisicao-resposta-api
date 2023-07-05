@@ -2,14 +2,14 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "Sapato Social Manhattan",
+      "descricao": "Sapato Social New York",
       "preco": "199.90",
       "imagem": "imagem.webp"
     },
     {
       "id": 2,
-      "descricao": "Sapato casual Brooklyn",
-      "preco": 159.9,
+      "descricao": "Sapato Casual Brooklyn",
+      "preco": "146.90",
       "imagem": "imagem.webp"
     },
     {
@@ -28,6 +28,12 @@
       "id": 5,
       "descricao": "Alpargatas Staten Island",
       "preco": 99.9,
+      "imagem": "imagem.webp"
+    },
+    {
+      "id": 6,
+      "descricao": "Cinto de couro Crocodilo Dundie",
+      "preco": "56.90",
       "imagem": "imagem.webp"
     }
   ],
