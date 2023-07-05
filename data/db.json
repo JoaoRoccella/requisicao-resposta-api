@@ -1,0 +1,9 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "descricao": "Sapato masculino New York",
+            "preco": 199.90
+        }
+    ]
+}
