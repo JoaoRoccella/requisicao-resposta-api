@@ -14,44 +14,14 @@
     </header>
 
     <button type="button" id="btnFetch">Fetch (buscar)</button>
-    <div id="resposta"></div>
+    <div id="listaProdutos"></div>
 
+    <script src="./assets/scripts/script.js"></script>
+    
     <script>
-
-        const requisicao = new Request('http://localhost:3000/produtos/', {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        });
-
         document.querySelector('#btnFetch').addEventListener('click', () => {
-
-            fetch(requisicao)
-                .then(resposta => resposta.json())
-                //    .then(resposta => JSON.stringify(resposta))
-                //    .then(resposta => JSON.parse(resposta))
-                .then(resposta => {
-
-                    document.querySelector('#resposta').innerHTML = "";
-
-                    for (let i = 0; i < resposta.length; i++) {
-
-                        const ul = document.createElement("ul");
-
-                        const produto = `
-                            <li>ID: ${resposta[i].id}</li>
-                            <li>Descrição: ${resposta[i].descricao}</li>
-                            <li>Preço: ${resposta[i].preco}</li>
-                            <li><img src=${resposta[i].imagem}></li>
-                        `
-                        document.querySelector('#resposta').appendChild(ul).innerHTML = produto;
-                    }
-
-                });
+            getProdutos();
         });
-
-
     </script>
 </body>
 
