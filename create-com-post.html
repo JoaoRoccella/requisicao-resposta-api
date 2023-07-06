@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação com APIs | Create com POST</title>
+</head>
+
+<body>
+    <header>
+        <a href="./">Home</a>
+        <h1>Create com POST</h1>
+    </header>
+
+    <form action="" method="post">
+
+        <label for="id">ID:</label>
+        <input type="text" id="id" disabled><br>
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao"><br>
+
+        <label for="preco">Preço:</label>
+        <input type="text" id="preco"><br>
+
+        <button type="button" id="btCadastrar">Cadastrar</button>
+
+    </form>
+
+    <div id="listaProdutos"></div>
+    
+    <script>
+
+        document.querySelector('#btCadastrar').addEventListener('click', () => {
+
+            const dados = {
+                'id': null,
+                'descricao': document.querySelector('#descricao').value,
+                'preco': document.querySelector('#preco').value
+            }
+
+            fetch('http://localhost:3000/produtos', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(dados)
+            })
+            .then(resposta => {
+                if(resposta.ok) {
+                    alert('Produto cadastrado');
+                }
+            });
+
+        });
+
+        fetch('http://localhost:3000/produtos', {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+            .then(resposta => resposta.json())
+            .then(resposta => {
+                
+                for(let i = 0; i < resposta.length; i++) {
+
+                    const ul = document.createElement('ul');
+
+                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
+
+                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
+
+                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
+                    
+                    document.querySelector('#listaProdutos').appendChild(ul);
+                }
+                
+            });
+    </script>
+</body>
+
+</html>

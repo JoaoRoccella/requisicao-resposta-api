@@ -1,37 +1,52 @@
 {
-    "produtos": [
-        {
-            "id": 1,
-            "descricao": "Sapato social Manhattan",
-            "preco": 199.90
-        },
-        {
-            "id": 2,
-            "descricao": "Sapato casual Brooklyn",
-            "preco": 159.90
-        },
-        {
-            "id": 3,
-            "descricao": "Sandália social Queens",
-            "preco": 112.90
-        },
-        {
-            "id": 4,
-            "descricao": "Sandália casual Bronx",
-            "preco": 122.90
-        },
-        {
-            "id": 5,
-            "descricao": "Alpargatas Staten Island",
-            "preco": 99.90
-        }
-    ],
-    "usuarios": [
-        {
-            "id": 1,
-            "usuario": "admin",
-            "senha": "admin",
-            "email": "admin@admin.com"
-        }
-    ]
+  "produtos": [
+    {
+      "id": 1,
+      "descricao": "Sapato social Manhattan",
+      "preco": 199.9
+    },
+    {
+      "id": 2,
+      "descricao": "Sapato casual Brooklyn",
+      "preco": 159.9
+    },
+    {
+      "id": 3,
+      "descricao": "Sandália social Queens",
+      "preco": 112.9
+    },
+    {
+      "id": 4,
+      "descricao": "Sandália casual Bronx",
+      "preco": 122.9
+    },
+    {
+      "id": 5,
+      "descricao": "Alpargatas Staten Island",
+      "preco": 99.9
+    },
+    {
+      "descricao": "Cinto de couro Crocodilo Dundie",
+      "preco": "59.90",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "descricao": "Bolsa Rhode Island",
+      "preco": "58.90"
+    },
+    {
+      "id": 8,
+      "descricao": "Bolsa teste",
+      "preco": "25.90"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "admin",
+      "senha": "admin",
+      "email": "admin@admin.com"
+    }
+  ]
 }

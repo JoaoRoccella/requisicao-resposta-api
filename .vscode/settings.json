@@ -6,5 +6,6 @@
         "**/*.ts",
         "**/db.json"
     ],
-    "liveServer.settings.host": "localhost"
+    "liveServer.settings.host": "localhost",
+    "liveServer.settings.CustomBrowser": "chrome:PrivateMode"
 }
