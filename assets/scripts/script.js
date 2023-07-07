@@ -17,13 +17,14 @@ const fontUbuntu = document.createElement('link');
 fontUbuntu.rel = 'stylesheet';
 fontUbuntu.href = 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap';
 
+// Appending os links de estilos no head
 document.head.append(googleapis);
 document.head.append(gstatic);
 document.head.append(fontUbuntu);
 document.head.append(style);
 
-function getProdutos() {
-    
+function getProdutos(btnDelete = false) {
+
     fetch('http://localhost:3000/produtos/', {
         method: 'GET',
         headers: {
@@ -33,11 +34,9 @@ function getProdutos() {
         .then(resposta => resposta.json())
         .then(resposta => {
 
-            document.querySelector('#listaProdutos').innerHTML = "";
-            
-            document.querySelector('#listaProdutos')
-                .appendChild(document.createElement('h3'))
-                .innerHTML = 'Produtos cadastrados';
+            const listaProdutos = document.querySelector('#listaProdutos');
+            listaProdutos.innerHTML = "";
+            listaProdutos.classList.add('lista-produtos');
 
             for (let i = 0; i < resposta.length; i++) {
 
@@ -45,14 +44,29 @@ function getProdutos() {
                 ul.classList.add('produto');
 
                 const img = document.createElement('img');
-                img.setAttribute('height', '40');
+                img.setAttribute('height', '50');
 
-                ul.appendChild(document.createElement('li')).innerHTML = `SKU: ${resposta[i].id}`;
-                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
-                ul.appendChild(document.createElement('li')).innerHTML = `$ ${resposta[i].preco}`;
+                if (btnDelete) {
+
+                    // Início do código do botão
+                    const liBotao = document.createElement('li');
+    
+                    const botao = document.createElement('button');
+                    botao.type = 'button';
+                    botao.innerHTML = '❌';
+                    botao.classList.add('botao-delete');
+                    botao.value = resposta[i].id;
+    
+                    ul.appendChild(liBotao).appendChild(botao);
+                    // Fim do código do botão
+                }
+
                 ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', `./assets/images/${resposta[i].imagem}`);
+                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
+                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
+                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
 
-                document.querySelector('#listaProdutos').appendChild(ul);
+                listaProdutos.appendChild(ul);
             }
 
         });

@@ -21,63 +21,27 @@
 
         document.addEventListener('click', event => {
 
-            if(event.target.classList.contains('botao-delete')) {
-                
+            if (event.target.classList.contains('botao-delete')) {
+
                 fetch(`http://localhost:3000/produtos/${event.target.value}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-type': 'application/json'
                     }
                 })
-                .then(resposta => {
-                    if(resposta.ok) {
-                        alert('Produto apagado!');
-                        location.reload();
-                    }
-                })
+                    .then(resposta => {
+                        if (resposta.ok) {
+                            alert('Produto apagado!');
+                        }
+                    });
+
+                    getProdutos(true);
 
             }
         });
 
-        fetch('http://localhost:3000/produtos/', {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-            .then(resposta => resposta.json())
-            .then(resposta => {
+        getProdutos(true);
 
-                document.querySelector('#listaProdutos').innerHTML = "";
-
-                for (let i = 0; i < resposta.length; i++) {
-
-                    const ul = document.createElement('ul');
-                    ul.classList.add('produto');
-
-                    const img = document.createElement('img');
-                    img.setAttribute('height', '50');
-
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
-                    ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', `./assets/images/${resposta[i].imagem}`);
-
-                    const liBotao = document.createElement('li');
-                    
-                    const botao = document.createElement('button');
-                    botao.type = 'button';
-                    botao.innerHTML = '❌';
-                    botao.classList.add('botao-delete');
-                    botao.value = resposta[i].id;
-
-                    ul.appendChild(liBotao).appendChild(botao);
-
-                    document.querySelector('#listaProdutos').appendChild(ul);
-                }
-
-            });
-            
     </script>
 </body>
 

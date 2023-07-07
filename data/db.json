@@ -1,12 +1,6 @@
 {
   "produtos": [
     {
-      "id": 20233,
-      "descricao": "Sandália Social Queens",
-      "preco": "112.90",
-      "imagem": "produto.webp"
-    },
-    {
       "id": 20234,
       "descricao": "Sapato Social New York",
       "preco": "199.90",
@@ -28,12 +22,6 @@
       "id": 20237,
       "descricao": "Sapato Infantil New Liberty",
       "preco": "129.90",
-      "imagem": "produto.webp"
-    },
-    {
-      "id": 20238,
-      "descricao": "Cinto Feminino Wall Street",
-      "preco": "58.90",
       "imagem": "produto.webp"
     }
   ],

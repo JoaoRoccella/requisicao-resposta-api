@@ -3,11 +3,25 @@
     font-size: 16pt;
 }
 
+.lista-produtos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .produto {
     display: flex;
+    flex-direction: column;
     list-style: none;
     justify-content: space-between;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    margin: 20px auto;
+    padding: 10px;
+    width: 10rem;
+    text-align: center;
+    background-color: #ccc;
+    border-radius: 8px;
+}
+
+.botao-delete {
+    padding: 10px;
 }
