@@ -1,7 +1,13 @@
+:root {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16pt;
+}
+
 .produto {
     display: flex;
     list-style: none;
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    
 }
