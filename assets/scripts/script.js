@@ -34,6 +34,10 @@ function getProdutos() {
         .then(resposta => {
 
             document.querySelector('#listaProdutos').innerHTML = "";
+            
+            document.querySelector('#listaProdutos')
+                .appendChild(document.createElement('h3'))
+                .innerHTML = 'Produtos cadastrados';
 
             for (let i = 0; i < resposta.length; i++) {
 
@@ -41,15 +45,12 @@ function getProdutos() {
                 ul.classList.add('produto');
 
                 const img = document.createElement('img');
-                img.setAttribute('height', '50');
+                img.setAttribute('height', '40');
 
-                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
-
+                ul.appendChild(document.createElement('li')).innerHTML = `SKU: ${resposta[i].id}`;
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
-
-                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
-
-                ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', resposta[i].imagem);
+                ul.appendChild(document.createElement('li')).innerHTML = `$ ${resposta[i].preco}`;
+                ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', `./assets/images/${resposta[i].imagem}`);
 
                 document.querySelector('#listaProdutos').appendChild(ul);
             }
