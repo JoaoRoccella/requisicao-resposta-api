@@ -1,0 +1,12 @@
+:root {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16pt;
+}
+
+.produto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+}
