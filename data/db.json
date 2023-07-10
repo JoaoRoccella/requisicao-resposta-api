@@ -26,9 +26,9 @@
       "preco": 99.9
     },
     {
-      "descricao": "Cinto de couro Crocodilo Dundie",
-      "preco": "59.90",
-      "id": 6
+      "id": 6,
+      "descricao": "Cinto de couro sintético",
+      "preco": "29.90"
     },
     {
       "id": 7,
@@ -37,8 +37,8 @@
     },
     {
       "id": 8,
-      "descricao": "Bolsa teste",
-      "preco": "25.90"
+      "descricao": "Bolsa de couro branca",
+      "preco": "145.90"
     }
   ],
   "usuarios": [
