@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação com APIs | Delete com DELETE</title>
+</head>
+
+<body>
+    <header>
+        <a href="./">Home</a>
+        <h1>Delete com DELETE</h1>
+    </header>
+
+    <div id="listaProdutos"></div>
+
+    <script>
+        fetch('http://localhost:3000/produtos', {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+            .then(resposta => resposta.json())
+            .then(resposta => {
+
+                for (let i = 0; i < resposta.length; i++) {
+
+                    const ul = document.createElement('ul');
+                    ul.classList.add('produto');
+
+                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
+                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
+                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
+
+                    const liDelete = document.createElement('li');
+                    const btDelete = document.createElement('button');
+                    btDelete.innerHTML = '❌';
+                    btDelete.value = resposta[i].id;
+                    btDelete.classList.add('delete-button');
+
+                    ul.appendChild(liDelete).appendChild(btDelete);
+
+                    document.querySelector('#listaProdutos').appendChild(ul);
+                }
+
+            });
+    </script>
+
+    <script src="./assets/scripts/estilos.js"></script>
+
+</body>
+
+</html>
