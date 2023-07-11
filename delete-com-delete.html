@@ -9,13 +9,31 @@
 
 <body>
     <header>
-        <a href="./">Home</a>
         <h1>Delete com DELETE</h1>
     </header>
 
     <div id="listaProdutos"></div>
 
     <script>
+        document.addEventListener('click', event => {
+            if(event.target.classList.contains('delete-button')){
+
+                fetch(`http://localhost:3000/produtos/${event.target.value}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
+                })
+                    .then(resposta => {
+                        if(resposta.ok){
+                            alert('Produto apagado!');
+                            location.reload(); // jeito porcão, será melhorado (promise)
+                        }
+                    })
+
+            }
+        });
+
         fetch('http://localhost:3000/produtos', {
             method: 'GET',
             headers: {
@@ -49,6 +67,7 @@
     </script>
 
     <script src="./assets/scripts/estilos.js"></script>
+    <script src="./assets/scripts/navbar.js"></script>
 
 </body>
 
