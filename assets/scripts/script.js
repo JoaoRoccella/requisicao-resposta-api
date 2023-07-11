@@ -43,13 +43,33 @@ function getProdutos(btnDelete = false) {
                 const ul = document.createElement('ul');
                 ul.classList.add('produto');
                 ul.id = `produto-${resposta[i].id}`;
+                ul.tabIndex = resposta[i].id;
 
                 const img = document.createElement('img');
+                img.setAttribute('src', `./assets/images/${resposta[i].imagem}`);
                 img.setAttribute('height', '50');
+                img.setAttribute('data-produto', 'imagem');
 
+                const liId = document.createElement('li');
+                liId.innerHTML = resposta[i].id;
+                liId.setAttribute('data-produto', 'id');
+                
+                const liDescricao = document.createElement('li');
+                liDescricao.innerHTML = resposta[i].descricao;
+                liDescricao.setAttribute('data-produto', 'descricao');
+                
+                const liPreco = document.createElement('li');
+                liPreco.innerHTML = resposta[i].preco;
+                liPreco.setAttribute('data-produto', 'preco');
+                
+                const liImg = document.createElement('li');
+                liImg.appendChild(img);
+                
+                ul.append(liImg, liId, liDescricao, liPreco);
+                
+                // Início do código do botão
                 if (btnDelete) {
 
-                    // Início do código do botão
                     const liBotao = document.createElement('li');
     
                     const botao = document.createElement('button');
@@ -59,13 +79,8 @@ function getProdutos(btnDelete = false) {
                     botao.value = resposta[i].id;
     
                     ul.appendChild(liBotao).appendChild(botao);
-                    // Fim do código do botão
                 }
-
-                ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', `./assets/images/${resposta[i].imagem}`);
-                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
-                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
-                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
+                // Fim do código do botão
 
                 listaProdutos.appendChild(ul);
             }

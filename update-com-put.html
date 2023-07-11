@@ -45,21 +45,28 @@
 
                 const elementoBase = event.target;
 
-                document.querySelector('#id').value = elementoBase.querySelector('li:nth-child(2)').innerHTML;
-                document.querySelector('#descricao').value = elementoBase.querySelector('li:nth-child(3)').innerHTML;
-                document.querySelector('#preco').value = elementoBase.querySelector('li:nth-child(4)').innerHTML;
-                document.querySelector('#imagem').value = elementoBase.querySelector('li:nth-child(1) img').getAttribute('src').split("images/").pop();
+                document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
+
+                document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
+
+                document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
+
+                document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').getAttribute('src').split("images/").pop();
 
                 checaInputs(); // Desafio 2
 
+                // Complemento desafio 1
             } else if (event.target.parentElement.classList.contains('produto')) {
 
                 const elementoBase = event.target.parentElement;
 
-                document.querySelector('#id').value = elementoBase.querySelector('li:nth-child(2)').innerHTML;
-                document.querySelector('#descricao').value = elementoBase.querySelector('li:nth-child(3)').innerHTML;
-                document.querySelector('#preco').value = elementoBase.querySelector('li:nth-child(4)').innerHTML;
-                document.querySelector('#imagem').value = elementoBase.querySelector('li:nth-child(1) img').getAttribute('src').split("images/").pop();
+                document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
+
+                document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
+
+                document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
+
+                document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').getAttribute('src').split("images/").pop();
 
                 checaInputs(); // Desafio 2
             }
@@ -68,24 +75,24 @@
         // Desafio 2
         function checaInputs() {
 
-            const idPreenchido = document.querySelector('#id').value !== "";
-            const descricaoPreenchida = document.querySelector('#descricao').value !== "";
-            const precoPreenchido = document.querySelector('#preco').value !== "";
-            const imagemPreenchida = document.querySelector('#imagem').value !== "";
+            // Estas constantes recebem tipo 'boolean'
+            const idPreenchido = document.querySelector('input#id').value !== "";
+            const descricaoPreenchida = document.querySelector('input#descricao').value !== "";
+            const precoPreenchido = document.querySelector('input#preco').value !== "";
+            const imagemPreenchida = document.querySelector('input#imagem').value !== "";
 
             if (descricaoPreenchida || precoPreenchido || imagemPreenchida || idPreenchido) {
-                document.querySelector('#reset').removeAttribute('disabled');
+                document.querySelector('button#reset').removeAttribute('disabled');
 
                 // Desafio 3
                 if (idPreenchido) {
-                    document.querySelector('#btnAtualizar').removeAttribute('disabled');
+                    document.querySelector('button#btnAtualizar').removeAttribute('disabled');
                 }
 
             } else {
-                document.querySelector('#reset').setAttribute('disabled', '');
-                document.querySelector('#btnAtualizar').setAttribute('disabled', '');
+                document.querySelector('button#reset').setAttribute('disabled', '');
+                document.querySelector('button#btnAtualizar').setAttribute('disabled', '');
             }
-
         }
 
         // Complemento desafio 2
@@ -94,7 +101,7 @@
             document.querySelector('#btnAtualizar').setAttribute('disabled', '');
         });
 
-        // Complemento desafio 3
+        //Complemento desafio 3
         document.addEventListener('keyup', () => {
             checaInputs();
         });
@@ -131,6 +138,7 @@
         getProdutos();
 
     </script>
+
 </body>
 
 </html>
