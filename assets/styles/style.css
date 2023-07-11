@@ -21,8 +21,9 @@
     background-color: #ddd;
     border-radius: 8px;
     box-shadow: 2px 2px 8px #555;
+    cursor: pointer;
 }
 
-.botao-delete {
+.botao-delete, .botao-update {
     padding: 10px;
 }

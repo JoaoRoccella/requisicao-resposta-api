@@ -42,6 +42,7 @@ function getProdutos(btnDelete = false) {
 
                 const ul = document.createElement('ul');
                 ul.classList.add('produto');
+                ul.id = `produto-${resposta[i].id}`;
 
                 const img = document.createElement('img');
                 img.setAttribute('height', '50');
@@ -62,9 +63,9 @@ function getProdutos(btnDelete = false) {
                 }
 
                 ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', `./assets/images/${resposta[i].imagem}`);
-                ul.appendChild(document.createElement('li')).innerHTML = `SKU: ${resposta[i].id}`;
+                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
-                ul.appendChild(document.createElement('li')).innerHTML = `$ ${resposta[i].preco}`;
+                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
 
                 listaProdutos.appendChild(ul);
             }

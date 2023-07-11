@@ -14,7 +14,7 @@
     </header>
 
     <div id="resposta"></div>
-    
+
     <form action="" method="post">
         <label for="id">ID:</label>
         <input type="text" id="id"><br>
@@ -28,14 +28,78 @@
         <label for="imagem">Imagem:</label>
         <input type="text" id="imagem"><br>
 
-        <button type="button" id="btnAtualizar">Atualizar</button>
+        <button type="button" id="btnAtualizar" disabled>Atualizar</button>
+        <button type="reset" id="reset" disabled>Cancelar</button>
     </form>
 
     <div id="listaProdutos"></div>
 
     <script src="./assets/scripts/script.js"></script>
-    
+
     <script>
+
+        // Desafio 1
+        document.addEventListener('click', event => {
+
+            if (event.target.classList.contains('produto')) {
+
+                const elementoBase = event.target;
+
+                document.querySelector('#id').value = elementoBase.querySelector('li:nth-child(2)').innerHTML;
+                document.querySelector('#descricao').value = elementoBase.querySelector('li:nth-child(3)').innerHTML;
+                document.querySelector('#preco').value = elementoBase.querySelector('li:nth-child(4)').innerHTML;
+                document.querySelector('#imagem').value = elementoBase.querySelector('li:nth-child(1) img').getAttribute('src').split("images/").pop();
+
+                checaInputs(); // Desafio 2
+
+            } else if (event.target.parentElement.classList.contains('produto')) {
+
+                const elementoBase = event.target.parentElement;
+
+                document.querySelector('#id').value = elementoBase.querySelector('li:nth-child(2)').innerHTML;
+                document.querySelector('#descricao').value = elementoBase.querySelector('li:nth-child(3)').innerHTML;
+                document.querySelector('#preco').value = elementoBase.querySelector('li:nth-child(4)').innerHTML;
+                document.querySelector('#imagem').value = elementoBase.querySelector('li:nth-child(1) img').getAttribute('src').split("images/").pop();
+
+                checaInputs(); // Desafio 2
+            }
+        });
+
+        // Desafio 2
+        function checaInputs() {
+
+            const idPreenchido = document.querySelector('#id').value !== "";
+            const descricaoPreenchida = document.querySelector('#descricao').value !== "";
+            const precoPreenchido = document.querySelector('#preco').value !== "";
+            const imagemPreenchida = document.querySelector('#imagem').value !== "";
+
+            if (descricaoPreenchida || precoPreenchido || imagemPreenchida || idPreenchido) {
+                document.querySelector('#reset').removeAttribute('disabled');
+
+                // Desafio 3
+                if (idPreenchido) {
+                    document.querySelector('#btnAtualizar').removeAttribute('disabled');
+                }
+
+            } else {
+                document.querySelector('#reset').setAttribute('disabled', '');
+                document.querySelector('#btnAtualizar').setAttribute('disabled', '');
+            }
+
+        }
+
+        // Complemento desafio 2
+        document.querySelector('form').addEventListener('reset', () => {
+            document.querySelector('#reset').setAttribute('disabled', '');
+            document.querySelector('#btnAtualizar').setAttribute('disabled', '');
+        });
+
+        // Complemento desafio 3
+        document.addEventListener('keyup', () => {
+            checaInputs();
+        });
+
+        // Request com o método PUT
         document.querySelector('#btnAtualizar').addEventListener('click', () => {
 
             const id = document.querySelector('#id').value;
@@ -65,6 +129,7 @@
         });
 
         getProdutos();
+
     </script>
 </body>
 
