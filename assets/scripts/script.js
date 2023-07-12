@@ -1,4 +1,8 @@
 // Meus estilos
+const reset = document.createElement('link');
+reset.rel = 'stylesheet';
+style.href = './assets/styles/reset.css';
+
 const style = document.createElement('link');
 style.rel = 'stylesheet';
 style.href = './assets/styles/style.css';
@@ -18,10 +22,7 @@ fontUbuntu.rel = 'stylesheet';
 fontUbuntu.href = 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap';
 
 // Appending os links de estilos no head
-document.head.append(googleapis);
-document.head.append(gstatic);
-document.head.append(fontUbuntu);
-document.head.append(style);
+document.head.append(reset, googleapis, gstatic, fontUbuntu, style);
 
 function getProdutos(btnDelete = false) {
 
