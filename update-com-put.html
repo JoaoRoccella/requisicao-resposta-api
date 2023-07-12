@@ -9,23 +9,39 @@
 
 <body>
     <header>
-        <h1>Update com PUT</h1>
+        <h1 class="titulo-pagina">Update com PUT</h1>
     </header>
 
-    <form action="" method="">
+    <div class="formulario">
 
-        <label for="id">ID:</label>
-        <input type="text" id="id"><br>
+        <h3 class="titulo-formulario">Alteração de Produtos</h3>
+        
+        <form class="formulario-update" action="" method="">
+    
+            <div class="entrada-formulario">
+                <label for="id">ID</label>
+                <input type="text" id="id" placeholder="digite o ID do produto">
+            </div>
+    
+            <div class="entrada-formulario">
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao" placeholder="digite a descrição do produto">
+            </div>
 
-        <label for="descricao">Descrição:</label>
-        <input type="text" id="descricao"><br>
+            <div class="entrada-formulario">
+                <label for="preco">Preço</label>
+                <input type="text" id="preco" placeholder="digite o preço do produto">
+            </div>
+    
+    
+            <div class="botoes-formulario">
+                <button class="bt bt-confirmar" type="button" id="btAtualizar">Atualizar</button>
+                <button class="bt bt-cancelar" type="button" id="btCancelar">Cancelar</button>
+            </div>
+    
+        </form>
 
-        <label for="preco">Preço:</label>
-        <input type="text" id="preco"><br>
-
-        <button type="button" id="btAtualizar">Atualizar</button>
-
-    </form>
+    </div>
 
     <div id="listaProdutos"></div>
     
@@ -83,7 +99,7 @@
     </script>
 
     <script src="./assets/scripts/estilos.js"></script>
-    <script src="./assets/scripts/navbar.js"></script>
+    <!-- <script src="./assets/scripts/navbar.js"></script> -->
 </body>
 
 </html>

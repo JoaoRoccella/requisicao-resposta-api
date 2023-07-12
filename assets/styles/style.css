@@ -1,6 +1,135 @@
 :root {
     font-family: 'Ubuntu', sans-serif;
     font-size: 16pt;
+    --background-color: #FEFFE4;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.titulo-pagina {
+    margin: 2.75rem auto;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.formulario {
+    background-color: #fff;
+    padding: 1.4rem 3.7rem;
+    border-radius: 0.75rem;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 0 auto 5.8rem;
+}
+
+.formulario-update input[type="text"] {
+    border-radius: 0.25rem;
+    border: 1px solid #000;
+    background-color: var(--background-color);
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25) inset;
+    width: 19rem;
+    height: 2.125rem;
+    padding: 0 .5rem;
+    font-size: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1;
+}
+
+.formulario-update input[type="text"]::placeholder {
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.titulo-formulario {
+    font-size: 1.5rem;
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+}
+
+.entrada-formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.9rem;
+}
+
+.formulario-update label {
+    font-size: 1rem;
+    padding-left: .56rem;
+}
+
+.botoes-formulario {
+    margin-top: 2.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bt-confirmar {
+    width: 10.4rem;
+    height: 2.9rem;
+    border-radius: 0.25rem;
+    background: #48A4FA;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+}
+
+.bt-confirmar:disabled {
+    background: #CAE6FF;
+    box-shadow: none;
+}
+
+.bt-confirmar:enabled:hover,
+.bt-confirmar:enabled:active {
+    background: #007BED;
+}
+
+.bt-cancelar {
+    width: 7.4rem;
+    height: 2.9rem;
+    border-radius: 0.25rem;
+    background: #F59999;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #444;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+}
+
+.bt-cancelar:disabled {
+    background: #FFE2E2;
+    box-shadow: none;
+}
+
+.bt:enabled {
+    cursor: pointer;
+}
+
+.bt:disabled {
+    cursor:not-allowed;
+}
+
+.bt-cancelar:enabled:hover,
+.bt-cancelar:enabled:active {
+    background: #FF5F5F;
+}
+
+.bt-confirmar:enabled:active,
+.bt-cancelar:enabled:active {
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
 .produto {
