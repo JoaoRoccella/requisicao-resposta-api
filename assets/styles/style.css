@@ -41,12 +41,14 @@ body {
 .formulario-update input[type="text"]::placeholder {
     font-style: italic;
     font-size: 1rem;
+    color: #9A9A9A;
 }
 
 .titulo-formulario {
     font-size: 1.5rem;
     margin-bottom: 1.8rem;
     font-weight: 400;
+    text-align: center;
 }
 
 .entrada-formulario {
@@ -58,10 +60,11 @@ body {
 .formulario-update label {
     font-size: 1rem;
     padding-left: .56rem;
+    margin-bottom: .25rem;
 }
 
 .botoes-formulario {
-    margin-top: 2.8rem;
+    margin: 3.69rem auto 1.85rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,7 +88,6 @@ body {
 
 .bt-confirmar:disabled {
     background: #CAE6FF;
-    box-shadow: none;
 }
 
 .bt-confirmar:enabled:hover,
@@ -111,7 +113,6 @@ body {
 
 .bt-cancelar:disabled {
     background: #FFE2E2;
-    box-shadow: none;
 }
 
 .bt:enabled {
@@ -120,6 +121,7 @@ body {
 
 .bt:disabled {
     cursor:not-allowed;
+    box-shadow: none;
 }
 
 .bt-cancelar:enabled:hover,
