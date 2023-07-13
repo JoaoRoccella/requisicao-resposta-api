@@ -12,17 +12,19 @@ body {
 }
 
 .titulo-pagina {
-    margin: 2.75rem auto;
+    margin: 2.8rem auto;
     font-size: 2rem;
     font-weight: 400;
 }
+
+/* FORMULÁRIO */
 
 .formulario {
     background-color: #fff;
     padding: 1.4rem 3.7rem;
     border-radius: 0.75rem;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin: 0 auto 5.8rem;
+    margin: 0 auto 3rem;
 }
 
 .formulario-update input[type="text"] {
@@ -31,7 +33,7 @@ body {
     background-color: var(--background-color);
     box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25) inset;
     width: 19rem;
-    height: 2.125rem;
+    height: 2.1rem;
     padding: 0 .5rem;
     font-size: 1rem;
     font-family: 'Ubuntu', sans-serif;
@@ -59,12 +61,12 @@ body {
 
 .formulario-update label {
     font-size: 1rem;
-    padding-left: .56rem;
+    padding-left: .5rem;
     margin-bottom: .25rem;
 }
 
 .botoes-formulario {
-    margin: 3.69rem auto 1.85rem;
+    margin: 3.7rem auto 1.9rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,7 +122,7 @@ body {
 }
 
 .bt:disabled {
-    cursor:not-allowed;
+    cursor: not-allowed;
     box-shadow: none;
 }
 
@@ -134,17 +136,61 @@ body {
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
+/* PRODUTOS */
+
+#listaProdutos {
+    width: 100%;
+    padding: 0 3.4rem;
+    margin-bottom: 5.7rem;
+}
+
+.titulo-lista {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
 .produto {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
     list-style: none;
+    border-bottom: 1px solid #000;
+    line-height: 2.6875rem;
+    margin-bottom: .25rem;
+}
+
+.produto:nth-child(even) {
+    background: #fff;
+}
+
+.produto:nth-child(odd) {
+    background: #fff1c1;
+}
+
+.produto li:nth-child(1) {
+    text-align: start;
+    margin-left: 2.4rem;
+    width: 10rem;
+}
+
+.produto li:nth-child(2) {
+    text-align: start;
+    width: 70%;
+}
+
+.produto li:nth-child(3) {
+    text-align: end;
+    width: 10rem;
+    margin-right: 2.4rem;
 }
 
 .delete-button {
     color: red;
 }
+
+/* NAVBAR */
 
 .navbar {
     background-color: beige;
