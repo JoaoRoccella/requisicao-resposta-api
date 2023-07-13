@@ -15,14 +15,15 @@ body {
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     font-size: 2rem;
+   font-weight: 400;
 }
 
 .formulario {
     background-color: #fff;
     border-radius: 0.75rem;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 1.4rem 3.7rem;
-    /* width: 26rem; */
+    padding: 1.4rem 3.7rem 0;
+    margin-bottom: 3rem;
 }
 
 .titulo-formulario {
@@ -30,6 +31,7 @@ body {
     font-family: Ubuntu;
     font-size: 1.5rem;
     margin: 0 auto 1.8rem;
+    font-weight: 400;
 }
 
 .formulario-atualizacao label,
@@ -66,7 +68,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 3.7rem auto 3.25rem;
+    margin: 2.8rem auto 3.25rem;
 }
 
 .bt {
@@ -127,13 +129,55 @@ body {
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
+/* PRODUTOS */
+
 #listaProdutos {
-    margin-top: 5.81rem;
+    width: 100%;
+    padding: 0 3.4rem;
+    margin-bottom: 5.7rem;
 }
 
-#listaProdutos ul {
+.titulo-lista {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.produto {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     list-style: none;
+    border-bottom: 1px solid #000;
+    min-height: 2.6875rem;
+    margin-bottom: .25rem;
+    padding: .8rem 0;
+}
+
+.produto:nth-child(even) {
+    background: #fff;
+}
+
+.produto:nth-child(odd) {
+    background: #fff1c1;
+}
+
+.produto li:nth-child(2) {
+    text-align: start;
+    margin-left: 2.4rem;
+    width: 10rem;
+}
+
+.produto li:nth-child(3) {
+    text-align: start;
+    width: 70%;
+}
+
+.produto li:nth-child(4) {
+    text-align: end;
+    width: 10rem;
+    margin-right: 2.4rem;
 }
 
 .produto {
@@ -142,6 +186,7 @@ body {
 
 .produto img {
     height: 24px;
+    display: none;
 }
 
 .botao-delete,
