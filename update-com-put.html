@@ -21,27 +21,27 @@
 
             <div class="controle-formulario">
                 <label for="id">ID</label>
-                <input type="text" id="id" placeholder="digite o ID do produto">
+                <input type="text" id="id" placeholder="digite o ID do produto" tabindex="1" autofocus>
             </div>
             
             <div class="controle-formulario">
                 <label for="descricao">Descrição</label>
-                <input type="text" id="descricao" placeholder="digite o ID do produto">
+                <input type="text" id="descricao" placeholder="digite o ID do produto" tabindex="2">
             </div>
             
             <div class="controle-formulario">
                 <label for="preco">Preço</label>
-                <input type="text" id="preco"placeholder="digite o preço do produto">
+                <input type="text" id="preco" placeholder="digite o preço do produto" tabindex="3">
             </div>
             
             <div class="controle-formulario">
                 <label for="imagem">Imagem</label>
-                <input type="text" id="imagem"placeholder="digite o nome da imagem do produto">
+                <input type="text" id="imagem" placeholder="digite o nome da imagem do produto" tabindex="4">
             </div>
     
             <div class="botoes">
-                <button class="bt bt-confirmar" type="button" id="btnAtualizar" disabled>Atualizar</button>
-                <button class="bt bt-cancelar" type="reset" id="reset" disabled>Cancelar</button>
+                <button class="bt bt-confirmar" type="button" id="btAtualizar" tabindex="0" disabled>Atualizar</button>
+                <button class="bt bt-cancelar" type="reset" id="btCancelar" tabindex="0" disabled>Cancelar</button>
             </div>
         </form>
 
@@ -98,23 +98,25 @@
             const imagemPreenchida = document.querySelector('input#imagem').value !== "";
 
             if (descricaoPreenchida || precoPreenchido || imagemPreenchida || idPreenchido) {
-                document.querySelector('button#reset').removeAttribute('disabled');
+                document.querySelector('button#btCancelar').removeAttribute('disabled');
 
                 // Desafio 3
                 if (idPreenchido) {
-                    document.querySelector('button#btnAtualizar').removeAttribute('disabled');
+                    document.querySelector('button#btAtualizar').removeAttribute('disabled');
+                } else {
+                    document.querySelector('button#btAtualizar').setAttribute('disabled', '');
                 }
 
             } else {
-                document.querySelector('button#reset').setAttribute('disabled', '');
-                document.querySelector('button#btnAtualizar').setAttribute('disabled', '');
+                document.querySelector('button#btCancelar').setAttribute('disabled', '');
+                document.querySelector('button#btAtualizar').setAttribute('disabled', '');
             }
         }
 
         // Complemento desafio 2
         document.querySelector('form').addEventListener('reset', () => {
-            document.querySelector('#reset').setAttribute('disabled', '');
-            document.querySelector('#btnAtualizar').setAttribute('disabled', '');
+            document.querySelector('#btCancelar').setAttribute('disabled', '');
+            document.querySelector('#btAtualizar').setAttribute('disabled', '');
         });
 
         //Complemento desafio 3
@@ -123,7 +125,7 @@
         });
 
         // Request com o método PUT
-        document.querySelector('#btnAtualizar').addEventListener('click', () => {
+        document.querySelector('#btAtualizar').addEventListener('click', () => {
 
             const id = document.querySelector('#id').value;
 
