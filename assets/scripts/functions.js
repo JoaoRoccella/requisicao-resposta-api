@@ -6,7 +6,13 @@ function getProdutos(btnDelete = false) {
             'Content-type': 'application/json'
         }
     })
-        .then(resposta => resposta.json())
+        .then(resposta => {
+            if (resposta.ok) {
+                return resposta.json();
+            } else {
+                throw new Error("Status code error :" + resposta.status);
+            }
+        })
         .then(resposta => {
 
             const listaProdutos = document.querySelector('#listaProdutos');
@@ -67,4 +73,5 @@ function getProdutos(btnDelete = false) {
             }
 
         });
+        
 }
