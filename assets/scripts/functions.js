@@ -13,12 +13,18 @@ function getProdutos(btnDelete = false) {
             listaProdutos.innerHTML = "";
             listaProdutos.classList.add('lista-produtos');
 
+            const tituloLista = document.createElement('h2');
+            tituloLista.innerHTML = 'Lista de Produtos';
+            tituloLista.classList.add('titulo-lista');
+
+            listaProdutos.append(tituloLista);
+
             for (let i = 0; i < resposta.length; i++) {
 
                 const ul = document.createElement('ul');
                 ul.classList.add('produto');
                 ul.id = `produto-${resposta[i].id}`;
-                ul.tabIndex = resposta[i].id;
+                ul.tabIndex = '';
 
                 const img = document.createElement('img');
                 img.setAttribute('src', `./assets/images/${resposta[i].imagem}`);
