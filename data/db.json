@@ -3,37 +3,44 @@
     {
       "id": 1,
       "descricao": "Sapato Social Manhattan",
-      "preco": "189.99"
+      "preco": "199.90",
+      "atualizado": false
     },
     {
       "id": 2,
       "descricao": "Sapato casual Brooklyn",
-      "preco": "159.90"
+      "preco": "159.90",
+      "atualizado": false
     },
     {
       "id": 3,
       "descricao": "Sandália social Queens",
-      "preco": "112.90"
+      "preco": "112.90",
+      "atualizado": false
     },
     {
       "id": 4,
       "descricao": "Sandália casual Bronx",
-      "preco": "122.90"
+      "preco": "122.90",
+      "atualizado": false
     },
     {
       "id": 5,
       "descricao": "Alpargatas Staten Island",
-      "preco": "99.90"
+      "preco": "99.90",
+      "atualizado": false
     },
     {
       "id": 6,
       "descricao": "Cinto de couro sintético",
-      "preco": "29.90"
+      "preco": "29.90",
+      "atualizado": false
     },
     {
       "id": 7,
       "descricao": "Bolsa Rhode Island",
-      "preco": "58.90"
+      "preco": "58.90",
+      "atualizado": false
     }
   ],
   "usuarios": [
