@@ -47,13 +47,30 @@
     </div>
     
     <script>
+        // Desafio 1...
+        document.querySelector('#listaProdutos').addEventListener('click', event => {
+            // console.log(event.target);
+            if(event.target.closest('ul').classList.contains('produto')) {
+                // console.log(event.target);
+                const elementoBase = event.target.closest('ul');
 
+                document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
+
+                document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
+                
+                document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
+            }
+        });
+
+
+        // Evento do botão Atualizar que dispara a requisição de PUT
         document.querySelector('#btAtualizar').addEventListener('click', () => {
 
             const dados = {
                 'id': null,
                 'descricao': document.querySelector('#descricao').value,
-                'preco': document.querySelector('#preco').value
+                'preco': document.querySelector('#preco').value,
+                'atualizado': true // implementação Jordânea
             }
 
             const id = document.querySelector('#id').value;
@@ -88,7 +105,12 @@
 
                     const ul = document.createElement('ul');
                     ul.classList.add('produto');
-                    ul.id = resposta[i].id;
+
+                    // Implementação Jordânea
+                    if(resposta[i].atualizado) {
+                        ul.style.color = 'blue';
+                    }
+                    // IJ-Fim
 
                     const liId = document.createElement('li');
                     liId.setAttribute('data-produto', 'id');
