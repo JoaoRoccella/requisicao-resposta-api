@@ -88,9 +88,9 @@ body {
     border: none;
 }
 
-.bt-confirmar:disabled {
+/* .bt-confirmar:disabled {
     background: #CAE6FF;
-}
+} */
 
 .bt-confirmar:enabled:hover,
 .bt-confirmar:enabled:active {
@@ -101,20 +101,22 @@ body {
     width: 7.4rem;
     height: 2.9rem;
     border-radius: 0.25rem;
-    background: #F59999;
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #444;
+    background: #fff;
+    border: 1px solid #F59999;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    color: #F59999;;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    border: none;
 }
 
 .bt-cancelar:disabled {
-    background: #FFE2E2;
+    background: #fff;
+    color: #ccc;
+    border: 1px solid #ccc;
 }
 
 .bt:enabled {
@@ -128,7 +130,8 @@ body {
 
 .bt-cancelar:enabled:hover,
 .bt-cancelar:enabled:active {
-    background: #FF5F5F;
+    background: #F59999;
+    color: #fff;
 }
 
 .bt-confirmar:enabled:active,

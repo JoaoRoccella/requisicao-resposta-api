@@ -4,7 +4,7 @@
       "id": 1,
       "descricao": "Sapato Social Manhattan",
       "preco": "199.90",
-      "atualizado": false
+      "atualizado": true
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "id": 3,
       "descricao": "Sandália social Queens",
       "preco": "112.90",
-      "atualizado": false
+      "atualizado": true
     },
     {
       "id": 4,

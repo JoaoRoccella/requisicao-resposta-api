@@ -35,7 +35,7 @@
     
             <div class="botoes-formulario">
                 <button class="bt bt-confirmar" type="button" id="btAtualizar">Atualizar</button>
-                <button class="bt bt-cancelar" type="button" id="btCancelar">Cancelar</button>
+                <button class="bt bt-cancelar" type="reset" id="btCancelar" disabled>Cancelar</button>
             </div>
     
         </form>
@@ -60,7 +60,35 @@
                 
                 document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
             }
+
+            verificaSeInputsEstaoPreenchidos();
         });
+
+        // Desafio 2...
+        function verificaSeInputsEstaoPreenchidos() {
+
+            const idPreenchido = document.querySelector('input#id').value !== "";
+            const descricaoPreenchido = document.querySelector('input#descricao').value !== "";
+            const precoPreenchido = document.querySelector('input#preco').value !== "";
+    
+            if(idPreenchido || descricaoPreenchido || precoPreenchido) {
+                document.querySelector('button#btCancelar').removeAttribute('disabled');
+            } else {
+                document.querySelector('button#btCancelar').setAttribute('disabled','');
+            }
+
+        }
+
+        // Complemento desafio 2: desabilita o botão no reset do formulário
+        document.querySelector('form').addEventListener('reset', () => {
+            document.querySelector('button#btCancelar').setAttribute('disabled','');
+        });
+
+        // Verifica os campos do formulário na digitação manual
+        document.querySelector('form').addEventListener('keyup', () => {
+            verificaSeInputsEstaoPreenchidos();
+        });
+
 
 
         // Evento do botão Atualizar que dispara a requisição de PUT
@@ -68,12 +96,13 @@
 
             const dados = {
                 'id': null,
-                'descricao': document.querySelector('#descricao').value,
-                'preco': document.querySelector('#preco').value,
+                'descricao': document.querySelector('input#descricao').value,
+                'preco': document.querySelector('input#preco').value,
                 'atualizado': true // implementação Jordânea
             }
+            console.log(JSON.stringify(dados))
 
-            const id = document.querySelector('#id').value;
+            const id = document.querySelector('input#id').value;
             
             fetch(`http://localhost:3000/produtos/${id}`, {
                 method: 'PUT',
