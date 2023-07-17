@@ -57,24 +57,9 @@
         // Desafio 1
         document.addEventListener('click', event => {
 
-            if (event.target.classList.contains('produto')) {
+            if (event.target.closest('ul').classList.contains('produto')) {
 
-                const elementoBase = event.target;
-
-                document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
-
-                document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
-
-                document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
-
-                document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').getAttribute('src').split("images/").pop();
-
-                checaInputs(); // Desafio 2
-
-                // Complemento desafio 1
-            } else if (event.target.parentElement.classList.contains('produto')) {
-
-                const elementoBase = event.target.parentElement;
+                const elementoBase = event.target.closest('ul');
 
                 document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
 
@@ -85,7 +70,8 @@
                 document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').getAttribute('src').split("images/").pop();
 
                 checaInputs(); // Desafio 2
-            }
+
+            } 
         });
 
         // Desafio 2

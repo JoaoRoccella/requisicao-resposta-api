@@ -185,8 +185,8 @@ body {
 }
 
 .produto img {
-    height: 24px;
-    display: none;
+    /* height: 24px; */
+    /* display: none; */
 }
 
 .botao-delete,
