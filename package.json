@@ -4,5 +4,6 @@
   },
   "scripts": {
     "start": "json-server --watch data/db.json --port 3000"
-  }
+  },
+  "type": "module"
 }

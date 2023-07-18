@@ -1,3 +1,5 @@
+import { buscaProdutos } from './read-com-get.js'
+
 // Desafio 1...
 document.querySelector('#listaProdutos').addEventListener('click', event => {
     // console.log(event.target);
@@ -77,3 +79,5 @@ document.querySelector('#btAtualizar').addEventListener('click', () => {
         });
 
 });
+
+buscaProdutos();

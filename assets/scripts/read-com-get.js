@@ -42,4 +42,4 @@ function buscaProdutos() {
         });
 }
 
-buscaProdutos();
+export { buscaProdutos };
