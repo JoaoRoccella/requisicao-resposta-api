@@ -1,4 +1,4 @@
-function getProdutos(btnDelete = false) {
+function getProdutos(btDelete = false) {
 
     fetch('http://localhost:3000/produtos/', {
         method: 'GET',
@@ -26,6 +26,22 @@ function getProdutos(btnDelete = false) {
                 ul.id = `produto-${resposta[i].id}`;
                 ul.tabIndex = '';
 
+                if (btDelete) {
+                    const liCheck = document.createElement('li');
+
+                    const labelCheck = document.createElement('label');
+                    labelCheck.classList.add('container');
+
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.value = resposta[i].id;
+
+                    labelCheck.appendChild(checkbox);
+                    labelCheck.appendChild(document.createElement('span')).classList.add('checkmark');
+
+                    ul.appendChild(liCheck).appendChild(labelCheck);
+                }
+
                 const img = document.createElement('img');
                 img.setAttribute('src', `./assets/images/${resposta[i].imagem}`);
                 img.setAttribute('height', '50');
@@ -49,7 +65,7 @@ function getProdutos(btnDelete = false) {
                 ul.append(liImg, liId, liDescricao, liPreco);
 
                 // Início do código do botão
-                if (btnDelete) {
+                if (btDelete) {
 
                     const liBotao = document.createElement('li');
 
@@ -68,3 +84,5 @@ function getProdutos(btnDelete = false) {
 
         });
 }
+
+export { getProdutos };

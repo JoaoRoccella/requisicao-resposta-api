@@ -9,18 +9,21 @@
 
 <body>
     <header>
-        <a href="./">Home</a>
-        <h1>Read com GET</h1>
+        <h1 class="titulo-pagina">Read com GET</h1>
     </header>
 
-    <button type="button" id="btnFetch">Fetch (buscar)</button>
+    <div class="botoes">
+        <button class="bt bt-confirmar" type="button" id="btnFetch">Fetch (buscar)</button>
+    </div>
+
     <div id="listaProdutos"></div>
 
-    <script src="./assets/scripts/functions.js"></script>
+    <script src="./assets/scripts/styles.js"></script>
     
-    <script>
+    <script type="module">
+        import { getProdutos } from './assets/scripts/read-com-get.js';
         document.querySelector('#btnFetch').addEventListener('click', () => {
-            getProdutos();
+            getProdutos(false);
         });
     </script>
 </body>

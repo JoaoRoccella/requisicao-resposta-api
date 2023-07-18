@@ -9,40 +9,22 @@
 
 <body>
     <header>
-        <a href="./">Home</a>
-        <h1>Delete com DELETE</h1>
+        <h1 class="titulo-pagina">Delete com DELETE</h1>
     </header>
+
+    <div class="botoes">
+        <button class="bt bt-confirmar" type="button" id="btConfirmar">Apagar selecionados</button>
+    </div>
 
     <div id="listaProdutos"></div>
 
-    <script src="./assets/scripts/functions.js"></script>
+    <script src="./assets/scripts/styles.js"></script>
+    <script type="module" src="./assets/scripts/delete-com-delete.js"></script>
 
     <script>
-
-        document.addEventListener('click', event => {
-
-            if (event.target.classList.contains('botao-delete')) {
-
-                fetch(`http://localhost:3000/produtos/${event.target.value}`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-type': 'application/json'
-                    }
-                })
-                    .then(resposta => {
-                        if (resposta.ok) {
-                            alert('Produto apagado!');
-                        }
-                    });
-
-                    getProdutos(true);
-
-            }
-        });
-
-        getProdutos(true);
-
+        
     </script>
+
 </body>
 
 </html>
