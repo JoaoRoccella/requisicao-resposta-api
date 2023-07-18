@@ -15,14 +15,14 @@
     <div class="formulario">
 
         <h3 class="titulo-formulario">Alteração de Produtos</h3>
-        
+
         <form class="formulario-update" action="" method="">
-    
+
             <div class="entrada-formulario">
                 <label for="id">ID</label>
-                <input type="text" id="id" placeholder="digite o ID do produto">
+                <input type="text" id="id" placeholder="digite o ID do produto" required>
             </div>
-    
+
             <div class="entrada-formulario">
                 <label for="descricao">Descrição</label>
                 <input type="text" id="descricao" placeholder="digite a descrição do produto">
@@ -32,12 +32,12 @@
                 <label for="preco">Preço</label>
                 <input type="text" id="preco" placeholder="digite o preço do produto">
             </div>
-    
+
             <div class="botoes-formulario">
-                <button class="bt bt-confirmar" type="button" id="btAtualizar">Atualizar</button>
+                <button class="bt bt-confirmar" type="button" id="btAtualizar" disabled>Atualizar</button>
                 <button class="bt bt-cancelar" type="reset" id="btCancelar" disabled>Cancelar</button>
             </div>
-    
+
         </form>
 
     </div>
@@ -46,121 +46,9 @@
         <h2 class="titulo-lista">Lista de Produtos</h2>
     </div>
     
-    <script>
-        // Desafio 1...
-        document.querySelector('#listaProdutos').addEventListener('click', event => {
-            // console.log(event.target);
-            if(event.target.closest('ul').classList.contains('produto')) {
-                // console.log(event.target);
-                const elementoBase = event.target.closest('ul');
 
-                document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
-
-                document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
-                
-                document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
-            }
-
-            verificaSeInputsEstaoPreenchidos();
-        });
-
-        // Desafio 2...
-        function verificaSeInputsEstaoPreenchidos() {
-
-            const idPreenchido = document.querySelector('input#id').value !== "";
-            const descricaoPreenchido = document.querySelector('input#descricao').value !== "";
-            const precoPreenchido = document.querySelector('input#preco').value !== "";
-    
-            if(idPreenchido || descricaoPreenchido || precoPreenchido) {
-                document.querySelector('button#btCancelar').removeAttribute('disabled');
-            } else {
-                document.querySelector('button#btCancelar').setAttribute('disabled','');
-            }
-
-        }
-
-        // Complemento desafio 2: desabilita o botão no reset do formulário
-        document.querySelector('form').addEventListener('reset', () => {
-            document.querySelector('button#btCancelar').setAttribute('disabled','');
-        });
-
-        // Verifica os campos do formulário na digitação manual
-        document.querySelector('form').addEventListener('keyup', () => {
-            verificaSeInputsEstaoPreenchidos();
-        });
-
-
-
-        // Evento do botão Atualizar que dispara a requisição de PUT
-        document.querySelector('#btAtualizar').addEventListener('click', () => {
-
-            const dados = {
-                'id': null,
-                'descricao': document.querySelector('input#descricao').value,
-                'preco': document.querySelector('input#preco').value,
-                'atualizado': true // implementação Jordânea
-            }
-            console.log(JSON.stringify(dados))
-
-            const id = document.querySelector('input#id').value;
-            
-            fetch(`http://localhost:3000/produtos/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(dados)
-            })
-            .then(resposta => {
-                if(resposta.ok) {
-                    alert('Produto atualizado');
-                    location.reload(); // jeito porcão, depois vamos melhorar (promise)
-                }
-            });
-
-        });
-
-        // Busca os produtos
-        fetch('http://localhost:3000/produtos', {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-            .then(resposta => resposta.json())
-            .then(resposta => {
-                
-                for(let i = 0; i < resposta.length; i++) {
-
-                    const ul = document.createElement('ul');
-                    ul.classList.add('produto');
-
-                    // Implementação Jordânea
-                    if(resposta[i].atualizado) {
-                        ul.style.color = 'blue';
-                    }
-                    // IJ-Fim
-
-                    const liId = document.createElement('li');
-                    liId.setAttribute('data-produto', 'id');
-                    liId.innerHTML = resposta[i].id;
-                    liId.classList.add('produto-id');
-
-                    const liDescricao = document.createElement('li');
-                    liDescricao.setAttribute('data-produto', 'descricao');
-                    liDescricao.innerHTML = resposta[i].descricao;
-                    
-                    const liPreco = document.createElement('li');
-                    liPreco.setAttribute('data-produto', 'preco');
-                    liPreco.innerHTML = resposta[i].preco;
-
-                    ul.append(liId, liDescricao, liPreco);
-                    
-                    document.querySelector('#listaProdutos').appendChild(ul);
-                }
-                
-            });
-    </script>
+    <script src="./assets/scripts/read-com-get.js"></script>
+    <script src="./assets/scripts/update-com-put.js"></script>
 
     <script src="./assets/scripts/estilos.js"></script>
     <!-- <script src="./assets/scripts/navbar.js"></script> -->

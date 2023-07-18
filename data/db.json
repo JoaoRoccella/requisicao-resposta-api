@@ -39,8 +39,8 @@
     {
       "id": 7,
       "descricao": "Bolsa Rhode Island",
-      "preco": "58.90",
-      "atualizado": false
+      "preco": "59.90",
+      "atualizado": true
     }
   ],
   "usuarios": [

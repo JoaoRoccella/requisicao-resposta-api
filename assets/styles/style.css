@@ -88,9 +88,9 @@ body {
     border: none;
 }
 
-/* .bt-confirmar:disabled {
+.bt-confirmar:disabled {
     background: #CAE6FF;
-} */
+}
 
 .bt-confirmar:enabled:hover,
 .bt-confirmar:enabled:active {
