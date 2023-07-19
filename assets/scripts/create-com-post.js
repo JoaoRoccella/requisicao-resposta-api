@@ -38,7 +38,7 @@ document.querySelector('#btConfirmar').addEventListener('click', () => {
         'imagem': document.querySelector('#imagem').value
     };
 
-    fetch(`https://json-server-vercel-taupe.vercel.app/produtos`, {
+    fetch(`http://localhost:3000/produtos`, {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'

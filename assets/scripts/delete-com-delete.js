@@ -21,7 +21,7 @@ document.addEventListener('click', event => {
 
     if (event.target.classList.contains('botao-delete')) {
 
-        fetch(`https://json-server-vercel-taupe.vercel.app/produtos/${event.target.value}`, {
+        fetch(`http://localhost:3000/produtos/${event.target.value}`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'

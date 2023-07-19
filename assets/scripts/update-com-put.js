@@ -66,7 +66,7 @@ document.querySelector('#btAtualizar').addEventListener('click', () => {
     };
 
     // Atualiza o produto
-    fetch(`https://json-server-vercel-taupe.vercel.app/produtos/${id}`, {
+    fetch(`http://localhost:3000/produtos/${id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'application/json'
