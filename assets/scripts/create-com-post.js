@@ -38,7 +38,7 @@ document.querySelector('#btConfirmar').addEventListener('click', () => {
         'imagem': document.querySelector('#imagem').value
     };
 
-    fetch(`https://json-server-vercel-api.vercel.app/produtos`, {
+    fetch(`https://json-server-vercel-git-main-joaoroccella.vercel.app/produtos`, {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'

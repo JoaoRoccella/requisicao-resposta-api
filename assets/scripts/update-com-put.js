@@ -66,7 +66,7 @@ document.querySelector('#btAtualizar').addEventListener('click', () => {
     };
 
     // Atualiza o produto
-    fetch(`https://json-server-vercel-api.vercel.app/produtos/${id}`, {
+    fetch(`https://json-server-vercel-git-main-joaoroccella.vercel.app/produtos/${id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'application/json'
