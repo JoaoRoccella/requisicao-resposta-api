@@ -10,12 +10,26 @@ body {
     align-items: center;
 }
 
+header,
+.conteudo-principal {
+    width: 95%;
+    margin: auto;
+}
+
 .titulo-pagina {
     margin: 2.7rem auto 2.6rem;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     font-size: 2rem;
     font-weight: 400;
+}
+
+.texto-descritivo {
+    margin-bottom: 1rem;
+}
+
+.secao-texto {
+    margin-bottom: 3rem;
 }
 
 .formulario {
@@ -26,11 +40,20 @@ body {
     margin-bottom: 3rem;
 }
 
-.titulo-formulario {
+.titulo-formulario,
+.subtitulo-pagina {
     text-align: center;
     font-family: Ubuntu;
     font-size: 1.5rem;
     margin: 0 auto 1.8rem;
+    font-weight: 400;
+}
+
+.subtitulo-topicos {
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 1.3rem;
+    margin: 1.8rem auto;
     font-weight: 400;
 }
 
