@@ -1,5 +1,7 @@
 import { getProdutos } from "./read-com-get.js";
 
+getProdutos();
+
 // Desafio 1
 document.querySelector('#listaProdutos').addEventListener('click', event => {
 
@@ -16,7 +18,6 @@ document.querySelector('#listaProdutos').addEventListener('click', event => {
         document.querySelector('input#imagem').value = elementoBase.querySelector('[data-produto="imagem"]').getAttribute('src').split("images/").pop();
 
         checaInputs(); // Desafio 2
-
     }
 });
 
@@ -30,17 +31,15 @@ function checaInputs() {
     const imagemPreenchida = document.querySelector('input#imagem').value !== "";
 
     if (descricaoPreenchida || precoPreenchido || imagemPreenchida || idPreenchido) {
-        document.querySelector('button#btCancelar').removeAttribute('disabled');
-
-        // Desafio 3
-        if (idPreenchido) {
-            document.querySelector('button#btAtualizar').removeAttribute('disabled');
-        } else {
-            document.querySelector('button#btAtualizar').setAttribute('disabled', '');
-        }
-
+        document.querySelector('button#btCancelar').removeAttribute('disabled');        
     } else {
         document.querySelector('button#btCancelar').setAttribute('disabled', '');
+    }
+    
+    // Desafio 3
+    if (idPreenchido) {
+        document.querySelector('button#btAtualizar').removeAttribute('disabled');
+    } else {
         document.querySelector('button#btAtualizar').setAttribute('disabled', '');
     }
 }
@@ -52,9 +51,7 @@ document.querySelector('form').addEventListener('reset', () => {
 });
 
 //Complemento desafio 3
-document.addEventListener('input', () => {
-    checaInputs();
-});
+document.addEventListener('input', checaInputs);
 
 // Request com o método PUT
 document.querySelector('#btAtualizar').addEventListener('click', () => {
@@ -69,7 +66,7 @@ document.querySelector('#btAtualizar').addEventListener('click', () => {
     };
 
     // Atualiza o produto
-    fetch(`http://localhost:3000/produtos/${id}`, {
+    fetch(`https://json-server-vercel-taupe.vercel.app/produtos/${id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'application/json'
@@ -79,11 +76,10 @@ document.querySelector('#btAtualizar').addEventListener('click', () => {
         .then(response => {
             if (response.ok) {
                 document.querySelector('#resposta').innerHTML = 'Produto atualizado!';
+                getProdutos();
             }
         })
 
-    getProdutos();
 
 });
 
-getProdutos();

@@ -1,5 +1,7 @@
 import { getProdutos } from "./read-com-get.js";
 
+getProdutos();
+
 // Desafio 2
 function checaInputs() {
 
@@ -36,7 +38,7 @@ document.querySelector('#btConfirmar').addEventListener('click', () => {
         'imagem': document.querySelector('#imagem').value
     };
 
-    fetch(`http://localhost:3000/produtos`, {
+    fetch(`https://json-server-vercel-taupe.vercel.app/produtos`, {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
@@ -46,11 +48,9 @@ document.querySelector('#btConfirmar').addEventListener('click', () => {
         .then(response => {
             if (response.ok) {
                 document.querySelector('#resposta').innerHTML = 'Produto cadastrado!';
+                getProdutos();
             }
         })
 
-    getProdutos();
 
 });
-
-getProdutos();

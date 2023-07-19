@@ -1,6 +1,6 @@
 function getProdutos(btDelete = false) {
 
-    fetch('http://localhost:3000/produtos/', {
+    fetch('https://json-server-vercel-taupe.vercel.app/produtos', {
         method: 'GET',
         headers: {
             'Content-type': 'application/json'
