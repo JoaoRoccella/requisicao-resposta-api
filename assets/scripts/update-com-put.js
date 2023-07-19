@@ -66,7 +66,7 @@ document.querySelector('#btAtualizar').addEventListener('click', () => {
     };
 
     // Atualiza o produto
-    fetch(`http://localhost:3000/produtos/${id}`, {
+    fetch(`https://json-server-vercel-npmqd253f-joaoroccella.vercel.app/produtos/${id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'application/json'

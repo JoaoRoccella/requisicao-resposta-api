@@ -38,7 +38,7 @@ document.querySelector('#btConfirmar').addEventListener('click', () => {
         'imagem': document.querySelector('#imagem').value
     };
 
-    fetch(`http://localhost:3000/produtos`, {
+    fetch(`https://json-server-vercel-npmqd253f-joaoroccella.vercel.app/produtos`, {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
