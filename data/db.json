@@ -185,6 +185,18 @@
       "descricao": "Produto",
       "preco": "59.90",
       "imagem": "produto.webp"
+    },
+    {
+      "id": 36,
+      "descricao": "Sandália feminina Coney Island",
+      "preco": "4",
+      "imagem": "produto.webp"
+    },
+    {
+      "id": 37,
+      "descricao": "Sapato masculino New York",
+      "preco": "45",
+      "imagem": "produto.webp"
     }
   ],
   "usuarios": [
