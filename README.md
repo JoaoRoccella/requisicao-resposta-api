@@ -1,6 +1,7 @@
 # 4 passos para transformar CommomJS em ModuleJS
 
 1. Dividir as funções em arquivos de forma lógica
+
 - update-com-put.html
 - update-com-put.js
 - read-com-get.js

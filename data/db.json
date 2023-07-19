@@ -3,14 +3,14 @@
     {
       "id": 1,
       "descricao": "Sapato Social Manhattan",
-      "preco": "199.90",
+      "preco": "299.90",
       "atualizado": true
     },
     {
       "id": 2,
       "descricao": "Sapato casual Brooklyn",
       "preco": "159.90",
-      "atualizado": false
+      "atualizado": true
     },
     {
       "id": 3,
@@ -41,6 +41,11 @@
       "descricao": "Bolsa Rhode Island",
       "preco": "59.90",
       "atualizado": true
+    },
+    {
+      "id": 8,
+      "descricao": "",
+      "preco": ""
     }
   ],
   "usuarios": [

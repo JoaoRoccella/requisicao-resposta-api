@@ -5,46 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interação com APIs | Read com GET</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <a href="./">Home</a>
-        <h1>Read com GET</h1>
+        <h1 class="titulo-pagina">Read com GET</h1>
     </header>
 
     <div id="listaProdutos"></div>
 
-    <script>
-        fetch('http://localhost:3000/produtos', {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-            .then(resposta => resposta.json())
-            .then(resposta => {
-
-                for (let i = 0; i < resposta.length; i++) {
-
-                    const ul = document.createElement('ul');
-                    ul.classList.add('produto');
-
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
-
-                    document.querySelector('#listaProdutos').appendChild(ul);
-                }
-
-            });
+    <script type="module">
+        import { buscaProdutos } from './assets/scripts/read-com-get.js';
+        buscaProdutos();
     </script>
 
+    <script src="./assets/scripts/navbar.js"></script>
     <script src="./assets/scripts/estilos.js"></script>
 
 </body>

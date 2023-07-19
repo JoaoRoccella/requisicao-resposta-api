@@ -27,7 +27,7 @@ body {
     margin: 0 auto 3rem;
 }
 
-.formulario-update input[type="text"] {
+.formulario>form input[type="text"] {
     border-radius: 0.25rem;
     border: 1px solid #000;
     background-color: var(--background-color);
@@ -40,7 +40,7 @@ body {
     line-height: 1;
 }
 
-.formulario-update input[type="text"]::placeholder {
+.formulario>form input[type="text"]::placeholder {
     font-style: italic;
     font-size: 1rem;
     color: #9A9A9A;

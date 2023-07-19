@@ -10,6 +10,13 @@ function buscaProdutos() {
         .then(resposta => resposta.json())
         .then(resposta => {
 
+            document.querySelector('#listaProdutos').innerHTML = '';
+            
+            const tituloProdutos = document.createElement('h2');
+            tituloProdutos.classList.add('titulo-lista');
+            tituloProdutos.innerHTML = 'Lista de Produtos';
+            document.querySelector('#listaProdutos').appendChild(tituloProdutos);
+
             for (let i = 0; i < resposta.length; i++) {
 
                 const ul = document.createElement('ul');
@@ -24,7 +31,7 @@ function buscaProdutos() {
                 const liId = document.createElement('li');
                 liId.setAttribute('data-produto', 'id');
                 liId.innerHTML = resposta[i].id;
-                liId.classList.add('produto-id');
+                // liId.classList.add('produto-id');
 
                 const liDescricao = document.createElement('li');
                 liDescricao.setAttribute('data-produto', 'descricao');
