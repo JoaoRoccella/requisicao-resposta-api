@@ -65,6 +65,17 @@ body {
     margin-bottom: .25rem;
 }
 
+.formulario>form input:disabled {
+    background: #f6f6f6;
+    box-shadow: none;
+    border-color: #bfbfbf;
+}
+
+label.disabled,
+label.disabled ~ input::placeholder {
+    color: #949494;
+}
+
 .botoes-formulario {
     margin: 3.7rem auto 1.9rem;
     display: flex;

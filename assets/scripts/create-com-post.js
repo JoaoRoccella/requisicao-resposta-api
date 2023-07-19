@@ -31,7 +31,8 @@ document.querySelector('#btCadastrar').addEventListener('click', () => {
     const dados = {
         'id': null,
         'descricao': document.querySelector('#descricao').value,
-        'preco': document.querySelector('#preco').value
+        'preco': document.querySelector('#preco').value,
+        'atualizado': false // implementação Jordânea
     }
 
     fetch('http://localhost:3000/produtos', {
