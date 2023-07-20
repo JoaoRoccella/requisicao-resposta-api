@@ -1,5 +1,5 @@
 // Busca os produtos
-function buscaProdutos() {
+function buscaProdutos(mostraBtDelete = false) {
 
     fetch('http://localhost:3000/produtos', {
         method: 'GET',
@@ -11,7 +11,7 @@ function buscaProdutos() {
         .then(resposta => {
 
             document.querySelector('#listaProdutos').innerHTML = '';
-            
+
             const tituloProdutos = document.createElement('h2');
             tituloProdutos.classList.add('titulo-lista');
             tituloProdutos.innerHTML = 'Lista de Produtos';
@@ -42,6 +42,18 @@ function buscaProdutos() {
                 liPreco.innerHTML = resposta[i].preco;
 
                 ul.append(liId, liDescricao, liPreco);
+
+                if (mostraBtDelete) {
+                    // botão delete
+                    const liDelete = document.createElement('li');
+                    const btDelete = document.createElement('button');
+                    btDelete.innerHTML = '❌';
+                    btDelete.value = resposta[i].id;
+                    btDelete.classList.add('delete-button');
+    
+                    ul.appendChild(liDelete).appendChild(btDelete);
+                    // fim delete
+                }
 
                 document.querySelector('#listaProdutos').appendChild(ul);
             }

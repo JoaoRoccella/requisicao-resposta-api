@@ -11,10 +11,16 @@ body {
     background-color: var(--background-color);
 }
 
+header {
+    width: 90%;
+    margin: 0 auto;
+}
+
 .titulo-pagina {
     margin: 2.8rem auto;
     font-size: 2rem;
     font-weight: 400;
+    text-align: center;
 }
 
 /* FORMULÁRIO */
@@ -197,6 +203,10 @@ label.disabled ~ input::placeholder {
 .produto li:nth-child(3) {
     text-align: end;
     width: 10rem;
+    margin-right: 2.4rem;
+}
+
+.produto li:last-child {
     margin-right: 2.4rem;
 }
 
