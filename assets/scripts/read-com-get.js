@@ -50,6 +50,15 @@ function buscaProdutos(mostraBtDelete = false) {
                     btDelete.innerHTML = '❌';
                     btDelete.value = resposta[i].id;
                     btDelete.classList.add('delete-button');
+
+                    const liCheck = document.createElement('li');
+                    const inputCheck = document.createElement('input');
+                    inputCheck.type = 'checkbox';
+                    inputCheck.value = resposta[i].id;
+
+                    liCheck.appendChild(inputCheck);
+
+                    ul.insertBefore(liCheck, liId);
     
                     ul.appendChild(liDelete).appendChild(btDelete);
                     // fim delete

@@ -189,18 +189,22 @@ label.disabled ~ input::placeholder {
     background: #fff1c1;
 }
 
-.produto li:nth-child(1) {
+.produto li:first-child {
+    margin-left: 2.4rem;
+}
+
+.produto li[data-produto="id"] {
     text-align: start;
     margin-left: 2.4rem;
     width: 10rem;
 }
 
-.produto li:nth-child(2) {
+.produto li[data-produto="descricao"] {
     text-align: start;
-    width: 70%;
+    width: 60%;
 }
 
-.produto li:nth-child(3) {
+.produto li[data-produto="preco"] {
     text-align: end;
     width: 10rem;
     margin-right: 2.4rem;
