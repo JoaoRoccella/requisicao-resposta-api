@@ -66,7 +66,7 @@ document.querySelector('#btAtualizar').addEventListener('click', () => {
     };
 
     // Atualiza o produto
-    fetch(`http://localhost:3000/produtos/${id}`, {
+    fetch(`https://json-server-vercel-21cf9vyc2-joaoroccella.vercel.app/produtos/${id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'application/json'
@@ -77,6 +77,8 @@ document.querySelector('#btAtualizar').addEventListener('click', () => {
             if (response.ok) {
                 document.querySelector('#resposta').innerHTML = 'Produto atualizado!';
                 getProdutos();
+            } else {
+                location.reload();
             }
         })
 

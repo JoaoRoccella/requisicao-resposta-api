@@ -38,7 +38,7 @@ document.querySelector('#btConfirmar').addEventListener('click', () => {
         'imagem': document.querySelector('#imagem').value
     };
 
-    fetch(`http://localhost:3000/produtos`, {
+    fetch(`https://json-server-vercel-21cf9vyc2-joaoroccella.vercel.app/produtos`, {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
@@ -49,6 +49,8 @@ document.querySelector('#btConfirmar').addEventListener('click', () => {
             if (response.ok) {
                 document.querySelector('#resposta').innerHTML = 'Produto cadastrado!';
                 getProdutos();
+            } else {
+                location.reload();
             }
         })
 
