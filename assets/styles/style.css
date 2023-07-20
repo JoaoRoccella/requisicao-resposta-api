@@ -26,6 +26,8 @@ header,
 
 .texto-descritivo {
     margin-bottom: 1rem;
+    text-align: justify;
+    line-height: 1.4;
 }
 
 .secao-texto {
