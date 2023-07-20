@@ -31,6 +31,8 @@ document.addEventListener('click', event => {
                 if (resposta.ok) {
                     alert('Produto apagado!');
                     getProdutos(true);
+                } else {
+                    location.reload();
                 }
             });
 
