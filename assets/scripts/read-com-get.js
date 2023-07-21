@@ -1,6 +1,6 @@
 function getProdutos(btDelete = false) {
 
-    fetch('https://json-server-vercel-21cf9vyc2-joaoroccella.vercel.app/produtos', {
+    fetch('https://json-server-vercel-api.vercel.app/produtos', {
         method: 'GET',
         headers: {
             'Content-type': 'application/json'
