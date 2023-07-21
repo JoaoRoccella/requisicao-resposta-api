@@ -61,9 +61,11 @@ document.querySelector('#btAtualizar').addEventListener('click', () => {
         'preco': document.querySelector('input#preco').value,
         'atualizado': true // implementação Jordânea
     }
-    console.log(JSON.stringify(dados))
+    // console.log(JSON.stringify(dados))
 
     const id = document.querySelector('input#id').value;
+
+    // console.log(id)
 
     fetch(`http://localhost:3000/produtos/${id}`, {
         method: 'PUT',
@@ -73,6 +75,7 @@ document.querySelector('#btAtualizar').addEventListener('click', () => {
         body: JSON.stringify(dados)
     })
         .then(resposta => {
+            
             if (resposta.ok) {
                 alert('Produto atualizado');
                 buscaProdutos();

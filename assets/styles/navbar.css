@@ -1,0 +1,22 @@
+/* NAVBAR */
+
+.navbar {
+    background-color: beige;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar li {
+    list-style: none;
+    text-align: center;
+}
+
+.navbar a {
+    color: #000;
+    text-decoration: none;
+}

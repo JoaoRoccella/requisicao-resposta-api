@@ -179,6 +179,7 @@ label.disabled ~ input::placeholder {
     border-bottom: 1px solid #000;
     line-height: 2.6875rem;
     margin-bottom: .25rem;
+    cursor: pointer;
 }
 
 .produto:nth-child(even) {
@@ -218,25 +219,43 @@ label.disabled ~ input::placeholder {
     color: red;
 }
 
-/* NAVBAR */
+@media screen and (max-width: 800px) {
+    
+    header {
+        width: 100%;
+    }
 
-.navbar {
-    background-color: beige;
+    .formulario>form input[type="text"] {
+        width: auto;
+    }
+
+    .bt-cancelar,
+    .bt-confirmar {
+        width: auto;
+    }
+
+    #listaProdutos {
+        padding: 0 1.4rem;
+    }
+
+    .produto {
+        line-height: initial;
+        height: 3.4rem;
+    }
+
 }
 
-.navbar ul {
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
+@media screen and (max-width: 500px) {
+    
+    .produto li[data-produto="id"] {
+        margin-left: 1.4rem;
+        width: 5rem;
+    }
+
+    .bt {
+        padding: 0 15px;
+        font-size: 100%;
+    }
+
 }
 
-.navbar li {
-    list-style: none;
-    text-align: center;
-}
-
-.navbar a {
-    color: #000;
-    text-decoration: none;
-}

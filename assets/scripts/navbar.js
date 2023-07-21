@@ -31,4 +31,9 @@ ul.appendChild(document.createElement('li')).appendChild(aDelete);
 
 nav.appendChild(ul);
 
-document.querySelector('header').insertBefore(nav, document.querySelector('header h1'))
+document.querySelector('header').insertBefore(nav, document.querySelector('header h1'));
+
+const navbarStyle = document.createElement('link');
+navbarStyle.rel = 'stylesheet';
+navbarStyle.href = './assets/styles/navbar.css';
+document.head.append(navbarStyle);

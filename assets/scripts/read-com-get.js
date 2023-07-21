@@ -9,6 +9,7 @@ function buscaProdutos(mostraBtDelete = false) {
     })
         .then(resposta => resposta.json())
         .then(resposta => {
+            // console.log(resposta)
 
             document.querySelector('#listaProdutos').innerHTML = '';
 
